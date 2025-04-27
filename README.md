@@ -16,11 +16,10 @@ https://github.com/oschwald/geoip2-golang
 ## request body format ##
 ```
 {
-    ip: "valid ip string",
-    validCountries: [
-        {coutryIsoCode: "string"},
-        {countryIsoCode: "string"}
+    "ip": "110.241.52.60",
+    "countryIsoCode": [
+        "US", "UA"
     ]
 }
 ```
-coutryIsoCodes should be alpha-2 code from [this list](https://www.iso.org/obp/ui/#search).
+countryIsoCodes should be alpha-2 code from [this list](https://www.iso.org/obp/ui/#search).
