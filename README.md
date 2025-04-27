@@ -6,6 +6,7 @@ go run /Users/{you}/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.8.darwin-amd64
 
 ## periodic updates using cron job ##
 https://dev.maxmind.com/geoip/updating-databases/
+[docker documentation](https://github.com/maxmind/geoipupdate/blob/main/doc/docker.md)
 
 ## unofficial golang client library ##
 https://github.com/oschwald/geoip2-golang
