@@ -44,3 +44,4 @@ to test ```go test  -coverprofile=coverage.out```
 
 This will run two containers.  One is the canned geoipupdate container and expose the db file for the other container.  My understanding is that this geoipupdate container will automatically update the db every x hours.  I have it set to 72.
 
+:rocket: Chatgpt helped me tremendously with the Dockerfile for the go service.
