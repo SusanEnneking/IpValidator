@@ -25,6 +25,6 @@ https://github.com/oschwald/geoip2-golang
 countryIsoCodes should be alpha-2 code from [this list](https://www.iso.org/obp/ui/#search).
 
 ## tests ##
-I submitted my version of the main.go file to ChatGpt and asked it to write tests.  It wrote the main_test.go file and suggested I use an interface for the db, which I accepted. This commit shows the changes Chatgpt made.
+I submitted my version of the main.go file to ChatGpt and asked it to write tests.  It wrote the main_test.go file and suggested I use an interface for the db, which I accepted. [This commit](https://github.com/SusanEnneking/IpValidator/commit/2b82feb2c5f4b158d7354b51c372df442111e131) shows the changes Chatgpt made.
 
 to test ```go test  -coverprofile=coverage.out```
