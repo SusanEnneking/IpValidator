@@ -8,7 +8,7 @@ go run /Users/{you}/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.8.darwin-amd64
 https://dev.maxmind.com/geoip/updating-databases/
 [docker documentation](https://github.com/maxmind/geoipupdate/blob/main/doc/docker.md)
 
-## unofficial golang client library ##
+## Unofficial golang client library ##
 https://github.com/oschwald/geoip2-golang
 
 ## Get ip file ##
@@ -37,4 +37,10 @@ to test ```go test  -coverprofile=coverage.out```
 3. If you want to debug, create a launch file and debug. If not, run ```go build``` and ```go run main.go```.
 
 4. Use Postman to post a request to https://localhost:{your port from .env file} using the request body format mentioned earlier in this README file.
+
+## Run locally with Docker ##
+1. Create an environment file like env.sample and source it.
+2. Run ```docker compose up -d```
+
+This will run two containers.  One is the canned geoipupdate container and expose the db file for the other container.  My understanding is that this geoipupdate container will automatically update the db every x hours.  I have it set to 72.
 

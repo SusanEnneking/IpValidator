@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"encoding/json"
-	"fmt"
 	"io"
 	"log/slog"
 	"net"
@@ -99,18 +98,17 @@ func main() {
 	if port == "" {
 		port = ":3000"
 	}
-	s := http.Server{
+	s := &http.Server{
 		Addr: port,
 	}
 
-	go func() {
-		s.ListenAndServeTLS("./cert.pem", "./key.pem")
-	}()
+	err = s.ListenAndServeTLS("./cert.pem", "./key.pem")
+	if err != nil && err != http.ErrServerClosed {
+		slog.InfoContext(context.Background(), "Listen And Serve Failed",
+			slog.String("Error", err.Error()),
+		)
+	}
 
-	fmt.Println("Server started, press <enter> to shut down")
-	fmt.Scanln()
-	s.Shutdown(context.Background())
-	fmt.Println("Server shut down gracefully")
 }
 
 func validate_country(validationInfo ValidationInfo, geoip GeoIPLookup) Result {
